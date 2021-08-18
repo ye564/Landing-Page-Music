@@ -1,0 +1,574 @@
+@import url('https://fonts.googleapis.com/css2?family=Rhodium+Libre&display=swap');
+
+:root{
+    --color-header-footer:linear-gradient(180deg, #8786AF 0%, rgba(135, 134, 175, 0) 100%);
+    --button-colum-1:#CFFF04;
+    --button-colum-2:#0ADD08;
+    --button-colum-3:#66008C;
+    --button-colum-4:#FE0002;
+    --color-Aka:#1B1515;
+    --color-titles:#000;
+    --header-height:4rem;
+    --max-width:1200px;
+    --font:'Rhodium Libre', serif;
+    --color-white:#FFFFFF;
+    --decorate1:#FF0000;
+    --decorate2:#E57979;
+    --decorate3:#DCFF52;
+    --bacground-button:#000;
+    --color-menu:#8786AF;
+
+}
+/* Resect of the HTML */
+html{
+    box-sizing: border-box;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+*,
+*::after, 
+*::before {
+    box-sizing: inherit;
+}
+body{
+    margin: 0;
+    overflow-x: hidden;
+}
+a{
+    transition: all 0.5s ease-out;
+}
+a:hover{
+    color:var(--color-titles);
+    text-decoration: none;
+}
+h1{
+    margin: 0;
+    font-size: 2rem;
+    font-family: var(--font);
+}
+h2{
+    margin: 0;
+    font-size: 1.5rem;
+}
+h3{
+    margin: 0;
+    font-size: 1.25rem;
+}
+h5{
+    margin: 0;
+    font-size: 0.85rem;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+p{
+    line-height: 1.6;
+}
+/* Style the Header */
+
+.header{
+    position: fixed;
+    left: 0;
+    bottom:0;
+    padding: 0.4rem 2rem;
+    z-index: 999;
+    width: 100%;
+    height: var(--header-height);
+    background: var(--color-menu);
+}
+
+.container1{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--max-width);
+}
+
+/* Menu  */
+.header > .container1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+.none{
+    display: none;
+}
+
+.btn-menu {
+    background-color:var(--color-header-footer);
+    border: none;
+}
+.menu{
+    border: 0;
+    cursor: pointer;
+    position: fixed;
+    left: 0;
+    bottom:var(--header-height);
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    background: var(--color-menu);
+    pointer-events: none;
+    transition: opacity 0.5s ease-out;
+  
+  }
+  .menu.is-active{
+    opacity: 1;
+    pointer-events: auto;
+}
+.menu a{
+    padding: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    color: var(--color-titles);
+}
+.menu a:hover{
+    color: var(--color-Aka);
+    font-size: 2rem;
+}
+
+@media screen and (min-width:1024px) {
+    .btn-menu{
+        display: none;
+    }
+    .header{
+        position: fixed;
+    }
+    .container1{
+        max-width:none;
+    }
+    .menu{
+        position: static;
+        width: auto;
+        flex-direction: row;
+        opacity: 1;
+        pointer-events: auto;
+        background:none;
+        
+    }
+    .menu a{
+        padding: 0 3rem;
+    }
+    .header > .container1{
+        margin: -10px 0;
+    }
+    .menu a:hover{
+       
+        background-color: transparent;
+    }  
+    .header{
+      position: sticky;
+      background: var(--color-header-footer);
+    } 
+    .logo{
+        margin: 0 3rem;
+    }
+    .footer{
+        margin-bottom: 0;
+    }
+}
+
+/* Section Home */
+button:focus{
+    background-color: #000;
+    transition: 0.5s all ease-in-out;
+}
+.home>h1{
+    text-align: center;
+    margin: 10px;
+    font-size: 4vw;
+}
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* section gif */
+.container-gif{
+    background: linear-gradient(180deg, #86ADAF 77.08%, rgba(134, 173, 175, 0) 99.98%, rgba(134, 173, 175, 0) 99.99%, rgba(134, 173, 175, 0) 100%);
+    width: 90%; 
+    height: 53vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 0;
+}
+
+
+/* style del MIDI */
+.container-Aka{
+    background-color: var(--color-Aka);
+    margin: 5%;
+    height: 40vw;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-style: outset;
+}
+.Akai-title{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 6%;
+    font-family: 'Roboto';
+    font-style:normal;
+    color: var(--color-white);
+
+}
+.button-color-1{
+    text-align: center;
+    color: white;
+}
+.button-color-2{
+    text-align: center;
+    color: white;
+}
+.button-color-3{
+    text-align: center;
+    color: white;
+}
+.button-color-4{
+    text-align: center;
+    color: white;
+}
+
+.h21{
+    font-size: 3.5vw;
+
+}
+.h22{
+    font-size: 3.5vw;
+    margin: 0 -7px;
+}
+/* components such as the screen and decoration circle */
+.components{
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+.components_1{
+    display: flex;
+    margin: 2% 6%;
+    flex-direction: column; 
+}
+.screen{
+    background-color: var(--color-white);
+    width: 100%;
+    height: 4vw;
+}
+.Decorate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 29vw;
+    margin: 0;
+}
+
+.decorate1{
+    background-color: var(--decorate1);
+    width: 25%;
+    height: 7vw;
+    margin: auto;
+    border-radius: 100px;
+}
+.decorate2{
+    background-color: var(--decorate2);
+    width: 25%;
+    height: 7vw;
+    margin: auto;
+    border-radius: 100px;
+}
+.decorate3{
+    background-color: var(--decorate3);
+    width: 25%;
+    height: 7vw;
+    margin: auto;
+    border-radius: 100px;
+}
+/* MIDI buttons style */
+
+.components_2{
+    display: grid;
+    grid-template-columns: repeat(4,25%);
+    padding: 1% 6%;
+    
+}
+.button-color-1{
+    width: 90%;
+    height: 7vw;
+    background-color: var(--bacground-button);
+    border: 0.7vw solid var(--button-colum-1);
+    border-radius: 10%;
+    border-style: outset;
+}
+.button-color-1:hover{
+    background-color: var(--button-colum-1);
+    transition: 0.5s ease-in-out;
+}
+.button-color-2{
+    width: 90%;
+    height: 7vw;
+    background-color: var(--bacground-button);
+    border: 0.7vw solid var(--button-colum-2);
+    border-radius: 10%;
+    border-style: outset;
+}
+.button-color-2:hover{
+    background-color: var(--button-colum-2);
+    transition: 0.5s ease-in-out;
+}
+.button-color-3{
+    width: 90%;
+    height: 7vw;
+    background-color: var(--bacground-button);
+    border: 0.7vw solid var(--button-colum-3);
+    border-radius: 10%;
+    border-style: outset;
+}
+.button-color-3:hover{
+    background-color: var(--button-colum-3);
+    transition: 0.5s ease-in-out;
+}
+.button-color-4{
+    width: 90%;
+    height: 7vw;
+    background-color: var(--bacground-button);
+    border: 0.7vw solid var(--button-colum-4);
+    border-radius: 10%;
+    border-style: outset;
+}
+.button-color-4:hover{
+    background-color: var(--button-colum-4);
+    transition: 0.5s ease-in-out;
+}
+
+.btn-buy{
+    margin: 0 40%;
+    background-color: var(--decorate2);
+    width: 19%;
+    align-content: center;
+    border-radius: 50px;
+    border: none;
+}
+.btn-buy>h2{
+    font-family: var(--font);
+    font-size: 3vw;
+}
+.btn-buy>h2:hover{
+    font-size: 3.2vw;
+}
+
+/* section products */
+.products{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+.products>h2{
+    margin: 4% 0;
+    font-family: var(--font);
+    font-size: 3vw;
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+}
+
+.content-product{
+    display: flex;
+    border: 10px;
+    border-style: outset; 
+}
+.content-product>img{
+    width: 40%;
+    height: auto;
+}
+.content-product-description{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+.content-product-description h3{
+    font-size: 3vw;
+}
+.content-product-description p{
+     font-size: 1.4vw;
+}
+.btn-more{
+ 
+    font-size: 3vw;
+    border-radius: 1;
+    margin: 2% 0;
+    color: #86ADAF;
+}
+@media screen and (min-width:1024px) {
+    .product{
+        display: grid;
+        grid-template-columns: repeat(3,30%);
+        justify-content: space-between;
+    }
+    .content-product{
+        flex-direction: column;
+    }
+    .content-product>img{
+        width: 100%;
+        height: auto;
+    }
+    .product{
+        height: auto;
+    }
+    .btn-more{
+        font-size: 3vw;
+        border-radius: 10%;
+        margin: 1% 0;
+    }
+}
+
+/* section services */
+.service{
+    width: 90%;
+    height: auto;
+    margin: 4% 5%;
+  
+}
+.service>h2{
+    font-size: 3vw;
+
+}
+.carousel{
+    height: 50vw;
+}     
+.carousel .carousel-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+    user-select: none;
+    width: 500px;
+    height: 50vw;
+}
+.carousel .carousel-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 30%;
+}
+
+.col>h2{
+    bottom: 50px;
+    font-size: 4vw;
+    font-family: var(--font);
+    color: var(--color-white);
+}
+.carousel .carousel-item h2{
+    font-size: 3vw;
+    color: var(--color-white);
+    font-family: var(--font);
+}
+.carousel .carousel-item p{
+    width: 90%;
+    font-size: 2vw;
+    margin: 0px 5%;
+    color: var(--color-white);
+    font-family: var(--font);
+}
+
+
+@media screen and (min-width:1024px) {
+    .service{
+        height: 45vw;
+    }
+    .carousel{
+        height: 40vw;
+    } 
+    
+}
+@media screen and (max-width: 640px) {
+    .carousel .carousel-item p{
+        width: 71%;
+        margin: 0 85px;
+        
+}
+
+}
+@media screen and (max-width:473px) {
+    .carousel .carousel-item p{
+    width: 32%;
+    margin: 0px 33%;
+    }
+}
+/* payment_methods */
+.payment_methods{
+    display: flex;
+    width:90%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5%;
+}
+.payment_methods>h2{
+    font-size: 3vw;
+}
+
+
+
+
+
+
+
+
+
+/* footer */
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: var(--header-height);
+    height: auto;
+    bottom: 60px;
+    background: var(--color-header-footer);
+}
+.footer>h2{
+    font-size: 2vw;
+    margin: 10px 0;
+    color: white;
+}
+
+small{
+    display: flex;
+    justify-content: center;
+    font-size: 1vw;
+    color: black;
+}
+small>a{
+    color:#000;
+}
+
+
+@media screen and (min-width:1024px) {
+    .footer{
+
+        margin-bottom:0px;
+    }
+}
+#result{}
